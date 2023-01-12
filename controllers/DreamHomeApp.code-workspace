@@ -1,0 +1,29 @@
+{
+  "folders": [
+	{
+		"path": "../../../../bootcamp/Dream_home/DreamHomeApp"
+	},
+	{
+		"path": "."
+	},
+	{
+		"path": "../db"
+	},
+	{
+		"path": "../models"
+	},
+	{
+		"path": "../public"
+	},
+	{
+		"path": "../seeds"
+	},
+	{
+		"path": "../utils"
+	},
+	{
+		"path": "../views"
+	}
+],
+  "settings": {}
+}

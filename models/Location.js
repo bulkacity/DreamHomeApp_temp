@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../connection");
 
 class Location extends Model {}
 
@@ -15,7 +15,7 @@ Location.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    property_number: {
+    number_of_properties: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

@@ -1,7 +1,7 @@
-const sequelize = require("../config/connection");
+const sequelize = require("../connection");
 const seedLocation = require("./locationData");
 const seedPropertys = require("./propertyData");
-const seedDatabase = require("./userData.json");
+const userData = require("./userData");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -10,7 +10,7 @@ const seedAll = async () => {
 
   await seedPropertys();
 
-  await seedDatabase();
+  await userData();
 
   process.exit(0);
 };

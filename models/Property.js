@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../connection");
 
 class Property extends Model {}
 
@@ -11,7 +11,7 @@ Property.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    tittle: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -23,15 +23,15 @@ Property.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    property_size: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    // property_size: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    // },
     bedrooms: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    bathroom: {
+    bathrooms: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },

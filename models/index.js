@@ -1,12 +1,12 @@
 const User = require("./User");
-const Gallery = require("./Location");
-const Painting = require("./Property");
+const Location = require("./Location");
+const Property = require("./Property");
 
-Gallery.hasMany(Property, {
+Location.hasMany(Property, {
   foreignKey: "location_id",
 });
 
-Painting.belongsTo(Location, {
+Property.belongsTo(Location, {
   foreignKey: "location_id",
 });
 

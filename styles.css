@@ -28,3 +28,11 @@
     background-size: cover;
     -webkit-background-size: cover;
 }
+.bg-theme3{
+    background-image: url(https://images.unsplash.com/photo-1597799029342-ab2546a93ec6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    width: 100%;
+    background-attachment: fixed !important;
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+}

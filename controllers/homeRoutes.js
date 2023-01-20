@@ -1,6 +1,7 @@
 const router = require("express").Router();
 // const { Location, Property } = require("../models");
 
+// Get all locations for hompage
 router.get("/", async (req, res) => {
   // try {
   //   const dbLocation = await Location.findAll({

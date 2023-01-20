@@ -1,0 +1,23 @@
+.hero{
+    position: relative;
+    background-color: #d1e6f9;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    z-index: 2;
+}
+
+.bg-theme{
+    background-image: url(./images/aerial-view-of-beautiful-hotel-on-the-water-in-oce-2022-02-08-22-39-24-utc.jpg);
+    width: 100%;
+    background-attachment: fixed !important;
+    background-position: center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.detail{
+    color: white;
+}

@@ -3,6 +3,7 @@ const router = require("express").Router();
 
 // Get all locations for hompage
 router.get("/", async (req, res) => {
+
   try {
     // const dbLocationData = await Location.findAll({
     //   include: [
@@ -21,6 +22,7 @@ router.get("/", async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
+
 });
 
 module.exports = router;

@@ -7,7 +7,6 @@ Property.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
@@ -23,10 +22,10 @@ Property.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    // property_size: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: false,
-    // },
+    property_size: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     bedrooms: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -45,10 +44,7 @@ Property.init(
     },
     location_id: {
       type: DataTypes.INTEGER,
-      references: {
-        model: "location",
-        key: "id",
-      },
+      allowNull: true,
     },
   },
   {

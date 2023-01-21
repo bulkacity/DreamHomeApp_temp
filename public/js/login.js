@@ -64,6 +64,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
+
         alert('username and password found');
         document.location.replace('/');
       } else {

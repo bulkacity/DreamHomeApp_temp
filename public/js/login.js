@@ -65,10 +65,10 @@ const signupFormHandler = async (event) => {
   
       if (response.ok) {
 
-        alert('username and password found');
+        // alert('username and password found');
         document.location.replace('/');
       } else {
-        alert('Failed to log in. Create a new account');
+        alert('Failed to log in. Create a new account or try again.');
       }
     }
   };

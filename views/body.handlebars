@@ -47,10 +47,11 @@
               class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12"
             >
               <a
-                href="#"
+                href="/"
                 class="font-semibold text-gray-900 hover:text-gray-900"
                 >Home</a
               >
+              {{#if loggedIn}}
               <a
                 href="#"
                 class="font-semibold text-gray-900 hover:text-gray-900"
@@ -66,6 +67,7 @@
                 class="font-semibold text-gray-900 hover:text-gray-900"
                 >Contact Us</a
               >
+              {{/if}}
             </div>
             {{#if loggedIn}}
             <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
@@ -168,13 +170,16 @@
                 <div
                   class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
+                {{#if loggedIn}}
+                {{else}}
                   <span class="text-gray-600">
-                    Announcing our next round of funding.
-                    <a href="#" class="font-semibold text-indigo-600"
+                    Sign up to gain exclusive access to site !
+                    <a href="/login" class="font-semibold text-indigo-600"
                       ><span class="absolute inset-0" aria-hidden="true"></span
-                      >Read more <span aria-hidden="true">&rarr;</span></a
+                      >Click to Sign Up <span aria-hidden="true">&rarr;</span></a
                     >
                   </span>
+                  {{/if}}
                 </div>
               </div>
               <div>
@@ -203,13 +208,14 @@
                     Live demo
                     <span class="text-gray-400" aria-hidden="true">&rarr;</span>
                   </a>
-                </div>
+
               </div>
             </div>
           </div>
         </div>
       </main>
     </div>
+
     {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}

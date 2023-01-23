@@ -1,0 +1,8 @@
+<section class="container">
+  <h3 class="location-name">{{location.address}}</h3>
+  <section class="flex-row justify-center">
+    {{#each Location.properties as |Property|}}
+    {{> property-details}}
+    {{/each}}
+  </section>
+</section>

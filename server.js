@@ -32,8 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(require('./controllers/index.js'));
+app.use(routes);
 
-app.listen(PORT, () => {
-  console.log('Server listening on: http://localhost:' + PORT);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log("Now listening"));
 });

@@ -1,4 +1,5 @@
 const User = require("./User");
+const Contacts = require("./contacts");
 const Location = require("./Location");
 const Property = require("./Property");
 
@@ -10,4 +11,4 @@ Property.belongsTo(Location, {
   foreignKey: "location_id",
 });
 
-module.exports = { User, Location, Property };
+module.exports = { User, Contacts, Location, Property };

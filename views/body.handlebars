@@ -1,89 +1,89 @@
-<body>
+  <link rel="stylesheet" href="../styles.css">
+  <body>
+    <nav class="bg-white-800">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Icon when menu is closed.
+    
+                Heroicon name: outline/bars-3
+    
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <!--
+                Icon when menu is open.
+    
+                Heroicon name: outline/x-mark
+    
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex flex-shrink-0 items-center">
+              <img class="block h-8 w-auto lg:hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+              <img class="hidden h-8 w-auto lg:block" src="../public/images/logo.png" alt="">
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              
+              <!--Nav bar with tabs  -->
+              <div class="flex space-x-4">
+                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                <a href="/" class="bg-white-900 text-black px-3 hover:bg-gray-700 hover:text-white py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+                {{#if loggedIn}}
+                
+    
+                <a href="/listings" class="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Listings</a>
+    
+                <a href="/contact" class="text-black-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact Us</a>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+          {{#if loggedIn}}
+          <div id="logout" class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <a href="" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Logout</a>
+          </div>
+          {{else}}
+          <div id="logout" class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <a href="/login" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Log in</a>
+          </div>
+          {{/if}}
+            <!-- Profile dropdown -->
+            
+    
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+          <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+    
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+    
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+    
+          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+        </div>
+      </div>
+    </nav>
+    
     <div class="isolate hero bg-theme">
       <div
         class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
       ></div>
       <div class="px-6 pt-6 lg:px-8">
         <div>
-          <nav
-            class="flex h-9 items-center justify-between"
-            aria-label="Global"
-          >
-            <div class="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img
-                  class="h-8"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
-              </a>
-            </div>
-            <div class="flex lg:hidden">
-              <button
-                type="button"
-                class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-              >
-                <span class="sr-only">Open main menu</span>
-                <!-- Heroicon name: outline/bars-3 -->
-                <svg
-                  class="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12"
-            >
-              <a
-                href="/"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Home</a
-              >
-              {{#if loggedIn}}
-              <a
-                href="#"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Agents</a
-              >
-              <a
-                href="/listings"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Listings</a
-              >
-              <a
-                href="#"
-                class="font-semibold text-gray-900 hover:text-gray-900"
-                >Contact Us</a
-              >
-              {{/if}}
-            </div>
-            {{#if loggedIn}}
-            <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-              <button id="logout" class="btn-no-style">Logout</button>
-            </div>
-            {{else}}
-            <div class="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-              <a
-                href="/login"
-                class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                >Log in</a
-              >
-            </div>
-            {{/if}}
-          </nav>
-          <!-- Mobile menu, show/hide based on menu open state. -->
+                    <!-- Mobile menu, show/hide based on menu open state. -->
           <div role="dialog" aria-modal="true">
             <div
               focus="true"
@@ -151,7 +151,7 @@
                   </div>
                   <div class="py-6">
                     <a
-                      href="/login"
+                      href="#"
                       class="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 hover:bg-gray-400/10"
                       >Log in</a
                     >
@@ -162,61 +162,162 @@
           </div>
         </div>
       </div>
+
       <main>
         <div class="relative px-6 lg:px-8">
           <div class="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
             <div>
               <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-                <div
+                <!-- <div
                   class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
-                {{#if loggedIn}}
-                {{else}}
                   <span class="text-gray-600">
-                    Sign up to gain exclusive access to site !
-                    <a href="/login" class="font-semibold text-indigo-600"
+                    Announcing our next round of funding.
+                    <a href="#" class="font-semibold text-indigo-600"
                       ><span class="absolute inset-0" aria-hidden="true"></span
-                      >Click to Sign Up <span aria-hidden="true">&rarr;</span></a
+                      >Read more <span aria-hidden="true">&rarr;</span></a
                     >
                   </span>
-                  {{/if}}
-                </div>
+                </div> -->
               </div>
               <div>
                 <h1
-                  class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl detail"
-                >
+                  class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl detail">
                   Find Your Dream Home
                 </h1>
-                <p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-                  
-                </p>
+                <p class="mt-6 text-lg leading-8 text-white sm:text-center">The best place to find your dream home</p>
                 <div class="mt-8 flex gap-x-4 sm:justify-center">
-                  <a
-                    href="/"
-                    class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700"
-                  >
-                    Get started
-                    <span class="text-indigo-200" aria-hidden="true"
-                      >&rarr;</span
-                    >
+                  <a href="/contact" class="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
+                    Contact Us
+                    <span class="text-indigo-200" aria-hidden="true">&rarr;</span>
                   </a>
-                  <a
-                    href="#"
-                    class="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                  >
-                    Live demo
-                    <span class="text-gray-400" aria-hidden="true">&rarr;</span>
                   </a>
-
+                </div>
               </div>
             </div>
           </div>
         </div>
+        
       </main>
     </div>
+    
+    <!-- Agents -->
+<div class="bg-gray-100">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+      <h2 class="text-2xl font-bold text-gray-900">Our Agents</h2>
+
+      <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
+        <div class="group relative">
+          <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+            <img src="/images/brandon.jpg" alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug." class="h-full w-full object-cover object-center">
+          </div>
+          <h3 class="mt-6 text-sm text-gray-500">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              
+            </a>
+          </h3>
+          <p class="text-base font-semibold text-gray-900">Brandon Mckie</p>
+        </div>
+
+        <div class="group relative">
+          <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+            <img src="/images/571b18440999ab70b01175e409148686.jpg" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." class="h-full w-full object-cover object-center">
+          </div>
+          <h3 class="mt-6 text-sm text-gray-500">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+              
+            </a>
+          </h3>
+          <p class="text-base font-semibold text-gray-900">Bradley Goldsworthy</p>
+        </div>
+
+        <div class="group relative">
+          <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
+            <img src="/images/Omar.JPG" alt="Collection of four insulated travel bottles on wooden shelf." class="h-full w-full object-cover object-center">
+          </div>
+          <h3 class="mt-6 text-sm text-gray-500">
+            <a href="#">
+              <span class="absolute inset-0"></span>
+             
+            </a>
+          </h3>
+          <p class="text-base font-semibold text-gray-900">Omar Correa</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="bg-white">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 py-24 px-4 sm:px-6 sm:py-32 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Services</h2>
+          <p class="mt-4 text-gray-500">We offer a variaty of different services</p>
+    
+          <dl class="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Property Listing</dt>
+              <dd class="mt-2 text-sm text-gray-500">We offer comprehensive property listings for buyers and renters, with detailed information and high-quality photos of each property.</dd>
+            </div>
+    
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Property Search</dt>
+              <dd class="mt-2 text-sm text-gray-500">Our advanced property search tool allows you to quickly and easily find the perfect property, based on your specific criteria.</dd>
+            </div>
+    
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Property Management</dt>
+              <dd class="mt-2 text-sm text-gray-500">Our experienced property management team can help you with all aspects of property management, from rent collection to maintenance and repairs.</dd>
+            </div>
+    
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Mortgage Assistance</dt>
+              <dd class="mt-2 text-sm text-gray-500">We can connect you with top mortgage lenders and help you navigate the loan process to find the best mortgage option for your needs.</dd>
+            </div>
+    
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Closing Services</dt>
+              <dd class="mt-2 text-sm text-gray-500">We assist with the closing process and make sure that everything is handled smoothly and efficiently.</dd>
+            </div>
+    
+            <div class="border-t border-gray-200 pt-4">
+              <dt class="font-medium text-gray-900">Home Staging</dt>
+              <dd class="mt-2 text-sm text-gray-500">We offer professional home staging services to help you prepare your property for sale or rental, making it more attractive to potential buyers or renters.</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+          <img src="./images/pexels-matheus-bertelli-2980955.jpg" alt="Walnut card tray with white powder coated steel divider and 3 punchout holes." class="rounded-lg bg-gray-100">
+          <img src="./images/pexels-jopwell-2422280.jpg" alt="Top down view of walnut card tray with embedded magnets and card groove." class="rounded-lg bg-gray-100">
+          <img src="./images/571b18440999ab70b01175e409148686.jpg" alt="Side of walnut card tray with card groove and recessed card area." class="rounded-lg bg-gray-100">
+          <img src="./images/pexels-energepiccom-175045.jpg" alt="Walnut card tray filled with cards and card angled in dedicated groove." class="rounded-lg bg-gray-100">
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <section class="home__video bg-theme-v6">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-8 mx-auto">
+                  <div class="home__video-area text-center">
+                     <h2 class="text-white">The #1 Place For Commercial Property</h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- END VIDEO -->
+
+
+
+    <!-- Strat of footer -->
+    
 
     {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
   </body>
+

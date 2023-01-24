@@ -225,4 +225,12 @@ body {
     box-shadow: 0 5px 10px 0 rgb(255 255 255 / 10%);
 }
 
-.brad{}
+.check-list{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 30px;
+}
+
+.contact-us{
+  padding-top: 50px;
+}

@@ -10,7 +10,7 @@ const contactFormHandler = async (event) => {
   const zip = document.querySelector("#postal-code").value.trim();
 
   if (firstName && lastName) {
-    const response = await fetch("/api/users", {
+    const response = await fetch("/api/users/register", {
       method: "POST",
       body: JSON.stringify({
         firstName,
@@ -28,7 +28,7 @@ const contactFormHandler = async (event) => {
       alert("Contact information has been saved");
       document.location.replace("/");
     } else {
-      alert("Contact information has been saved.");
+      document.location.replace("/success");
     }
   }
 };

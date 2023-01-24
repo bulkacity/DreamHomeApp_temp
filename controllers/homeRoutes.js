@@ -19,14 +19,13 @@ const { Location, Property } = require("../models");
 //   res.render('body');
 // });
 
-
-router.get('/', async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const dbLocationData = await Location.findAll({
       include: [
         {
           model: Property,
-          attributes: ['address', 'price'],
+          attributes: ["address", "price"],
         },
       ],
     });
@@ -35,7 +34,7 @@ router.get('/', async (req, res) => {
       property.get({ plain: true })
     );
 
-    res.render('body', {
+    res.render("body", {
       properties,
       loggedIn: req.session.loggedIn,
     });
@@ -45,18 +44,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
-router.get('/listings', (req, res) => {
-  res.render('listings');
+router.get("/listings", (req, res) => {
+  res.render("listings");
+});
+
+router.get("/contact", (req, res) => {
+  res.render("contact");
 });
 
 module.exports = router;

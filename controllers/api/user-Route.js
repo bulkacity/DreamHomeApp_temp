@@ -1,20 +1,18 @@
-const router = require('express').Router();
-const { User } = require('../../models');
-
+const router = require("express").Router();
+const { User } = require("../../models");
 
 // create a new user
-router.post('/', async (req, res) => {
-  console.log(req.body.username)
+router.post("/", async (req, res) => {
+  console.log(req.body.username);
   try {
     const dbUserData = await User.create({
-      
       username: req.body.username,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
- 
+
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -25,7 +23,7 @@ router.post('/', async (req, res) => {
 ////
 
 // Login
-router.post('/login', async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
       where: {
@@ -36,7 +34,7 @@ router.post('/login', async (req, res) => {
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
@@ -45,17 +43,16 @@ router.post('/login', async (req, res) => {
     if (!validPassword) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ user: dbUserData, message: "You are now logged in!" });
     });
   } catch (err) {
     console.log(err);
@@ -64,7 +61,7 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -74,50 +71,28 @@ router.post('/logout', (req, res) => {
   }
 });
 
+/// register a new user
+
+// create a new user for contact
+router.post("/register", async (req, res) => {
+  try {
+    const dbUserData = await User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      emailAddress: req.body.emailAddress,
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      state: req.body.state,
+      zip: req.body.zip,
+    });
+
+    req.session.save(() => {
+      res.status(200).json(dbUserData);
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.post("/register", async (req, res) => {
-//   console.log(req.body);
-//   try {
-//     if (!req.body && !req.body.name && !req.body.email) {
-//       res.status(400).send("Missing Property in Request Body");
-//     }
-
-//     if (
-//       !req.body.passwprd &&
-//       !req.body.confirm &&
-//       req.body.passwprd !== req.body.confirm
-//     ) {
-//       res.status(400).send("Password error");
-//     }
-//     const newUser = await User.create(req.body);
-
-//     if (newUser) {
-//       console.log("New User", newUser);
-//       res.status(200).json("Registered new user");
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send("Internal Server Error");
-//   }
-// });
-
-// module.exports = userRoute;

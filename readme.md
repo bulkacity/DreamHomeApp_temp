@@ -45,7 +45,7 @@ SO THAT I can find current homes for sale
 ![screenshot1 (Login)](./images/LoggedIn.jpeg)
 
 ---
-![screenshot3 (Register Page)](/media/employee-tracker-3.png)
+![screenshot3 (Register Page)](./images/registerPage.jpeg)
 
 ---
 ![screenshot2(LoggedIn)](./images/LoggedIn.jpeg)

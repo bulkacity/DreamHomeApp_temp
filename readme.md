@@ -12,6 +12,7 @@
 ## Table of Contents
 * [Description](#description)
 * [Schema](#schema)
+* [Deployed Link](#linked)
 * [Visuals](#visuals)
 * [License](#license)
 * [Contributing](#contribution)
@@ -34,6 +35,10 @@ SO THAT I can find current homes for sale
 ## Schema
 
 <img src='./images/Schema.jpg' width="600">
+
+## Linked
+
+[DreamHomeApp](https://stormy-fortress-30769.herokuapp.com/)
 
 ## Visuals
 
